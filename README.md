@@ -4,6 +4,7 @@
 //fopen打开文件，fclose关闭文件
 #include<stdio.h>
 #include<string.h>
+#include<strno.h>
  int main()
 {
       //打开文件test.txt（相对路径）
@@ -12,7 +13,7 @@
       //fopen（"../test.txt","r");
       //路径分为绝对路径和相对路径，绝对路径将文件所有的路径用\\连接列出来
       //fopen(" 文件名“，”模式“）
-      FILE* pf=fopen("test.txt","r");
+      FILE* pf=fopen("test.txt","r");//以r形式打开文件若没有文件则显示不存在，若以w的形式打开文件，文件不存在则新创建一个文件
       if(pf==NULL;)
       {
             printf("%s\n",strerror(errno));
@@ -35,9 +36,9 @@
             return 0;
       }
       //写文件
-      fputec('b',pfWrite);
-      fputec('i',pfWrite);
-      fputec('t',pfWrite);
+      fputc('b',pfWrite);
+      fputc('i',pfWrite);
+      fputc('t',pfWrite);
       //关闭文件
       fclose(pfWrite);
       pfWrite=NULL;
